@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: wx-mini-program-proxy
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: yourPassWord
+    url: jdbc:mysql://localhost:3306/wx_mini_program_dev_db?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+  jpa:
+    database: mysql
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+com:
+  ning:
+    wx-mini-program:
+      appId: yourAppId
+      appSecret: yourAppSecret
+logging:
+  file:
+    name: /opt/logs/${spring.application.name}/dev-api/spring.log
